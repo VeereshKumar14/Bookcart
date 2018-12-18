@@ -53,7 +53,8 @@ renderCart(){
 	const cartItemsList=this.props.cart.map(function(cartArr){
 		return(
 		<Panel key={cartArr._id}>
-		<Row>
+		
+		<Panel.Body><Row>
 		<Col xs={12} sm={4}>
 		<h6>{cartArr.title}</h6><span>      </span>
 
@@ -71,19 +72,20 @@ renderCart(){
 <Button onClick={this.onDecrement.bind(this,cartArr._id,cartArr.quantity)}bsStyle="default" bsSize="small">-</Button>
 <Button onClick={this.onIncrement.bind(this,cartArr._id)}  bsStyle="default" bsSize="small">+</Button>
 <span>      </span>
-<Button onClick={this.onDelete.bind(this,cartArr._id)} bsStyle="danger" bsSize="small">DELETE</Button>
+<Button onClick={this.onDelete.bind(this, cartArr._id)} bsStyle="danger" bsSize="small">DELETE</Button>
 		</ButtonGroup>
 		</Col>
 		</Row>
-		
+		</Panel.Body>
 
 		</Panel>
 
 		)
 	},this)
 		return(
-		<Panel header="Cart" bsStyle="primary">
-		{cartItemsList}
+		<Panel  bsStyle="primary">
+		<Panel.Heading>Cart</Panel.Heading>
+		<Panel.Body>{cartItemsList}
 		<Row>
 		<Col xs={12}>
 		<h6>Total amount:{this.props.totalAmount}</h6>
@@ -104,7 +106,7 @@ renderCart(){
 		</Modal.Footer>
 		
 		</Modal>
-		 
+		 </Panel.Body>
 
 		</Panel>
 

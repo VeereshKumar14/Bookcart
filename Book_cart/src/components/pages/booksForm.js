@@ -10,32 +10,33 @@ import {postBooks,deleteBooks} from '../../actions/booksActions';
 
 class BooksForm extends React.Component{
 handleSubmit(){
-	const book=[{
-		title:findDOMNode(this.refs.title).value,
-		description:findDOMNode(this.refs.description).value,
-		price:findDOMNode(this.refs.price).value
+  const book=[{
+    title:findDOMNode(this.refs.title).value,
+    description:findDOMNode(this.refs.description).value,
+    price:findDOMNode(this.refs.price).value
 
 
-	}]
-	this.props.postBooks(book);
+  }]
+  this.props.postBooks(book);
 }
-onDeelete(){
-	let bookId=findDOMNode(this.refs.delete).value;
-	this.props.deleteBooks(bookId);
+onDelete(){
+  let bookId=findDOMNode(this.refs.delete).value;
+  this.props.deleteBooks(bookId);
 }
 
 
   render(){     
 
 const booksList=this.props.books.map(function(booksArr){
-	return(
-		<option key={booksArr._id}>{booksArr._id}</option>
-		)
+  return(
+    <option key={booksArr._id}>{booksArr._id}</option>
+    )
 })
 
-  	return(  
-       <Well>
+    return(  
+       <Well bsSize="large">
         <Panel>
+       <Panel.Body>
           <FormGroup controlId="title">
             
 <ControlLabel>Title</ControlLabel>
@@ -61,18 +62,21 @@ const booksList=this.props.books.map(function(booksArr){
                              ref="price" />
           </FormGroup>
           <Button onClick={this.handleSubmit.bind(this)}  bsStyle="primary">Save book</Button>
- 
+ </Panel.Body>
          </Panel >
+
+
+
          <Panel style={{marginTop:'25px'}}>
          <FormGroup controlId="price">
          <ControlLabel>Select a book id to delete</ControlLabel>
-			<FormControl ref="delete" componentClass="select" placeholder="select">
-			<option value="select">select</option>
-			{booksList}
+      <FormControl ref="delete" componentClass="select" placeholder="select">
+      <option value="select">select</option>
+      {booksList}
 
-			</FormControl>
-			</FormGroup>
-			<Button onClick={this.onDeelete.bind(this)} bsStyle="danger">Delete book</Button>
+      </FormControl>
+      </FormGroup>
+      <Button onClick={this.onDelete.bind(this)} bsStyle="danger">Delete book</Button>
          </Panel>
 
 
@@ -82,7 +86,7 @@ const booksList=this.props.books.map(function(booksArr){
    } 
    function mapStateToProps(state){
 return{
-	books:state.books.books
+  books:state.books.books
 
 }
 
