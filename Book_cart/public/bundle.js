@@ -30278,7 +30278,7 @@ function updateBooks(book) {
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+		value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -30316,70 +30316,154 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var BooksList = function (_React$Component) {
-	_inherits(BooksList, _React$Component);
+		_inherits(BooksList, _React$Component);
 
-	function BooksList() {
-		_classCallCheck(this, BooksList);
+		function BooksList() {
+				_classCallCheck(this, BooksList);
 
-		return _possibleConstructorReturn(this, (BooksList.__proto__ || Object.getPrototypeOf(BooksList)).apply(this, arguments));
-	}
-
-	_createClass(BooksList, [{
-		key: 'componentDidMount',
-		value: function componentDidMount() {
-			this.props.getBooks();
+				return _possibleConstructorReturn(this, (BooksList.__proto__ || Object.getPrototypeOf(BooksList)).apply(this, arguments));
 		}
-	}, {
-		key: 'render',
-		value: function render() {
-			//console.log('Are we access: ',this.props.books);
-			var booksList = this.props.books.map(function (booksArr) {
-				return _react2.default.createElement(
-					_reactBootstrap.Col,
-					{ xs: 12, sm: 6, md: 4, key: booksArr._id },
-					_react2.default.createElement(_bookItem2.default, {
-						_id: booksArr._id,
-						title: booksArr.title,
-						description: booksArr.description,
-						price: booksArr.price })
-				);
-			});
-			return _react2.default.createElement(
-				_reactBootstrap.Grid,
-				null,
-				_react2.default.createElement(
-					_reactBootstrap.Row,
-					null,
-					_react2.default.createElement(_cart2.default, null)
-				),
-				_react2.default.createElement(
-					_reactBootstrap.Row,
-					null,
-					_react2.default.createElement(
-						_reactBootstrap.Col,
-						{ xs: 12, sm: 6 },
-						_react2.default.createElement(_booksForm2.default, null)
-					),
-					_react2.default.createElement(
-						_reactBootstrap.Col,
-						{ xs: 12, sm: 6 },
-						booksList
-					)
-				)
-			);
-		}
-	}]);
 
-	return BooksList;
+		_createClass(BooksList, [{
+				key: 'componentDidMount',
+				value: function componentDidMount() {
+						this.props.getBooks();
+				}
+		}, {
+				key: 'render',
+				value: function render() {
+						//console.log('Are we access: ',this.props.books);
+						var booksList = this.props.books.map(function (booksArr) {
+								return _react2.default.createElement(
+										_reactBootstrap.Col,
+										{ xs: 12, sm: 6, md: 4, key: booksArr._id },
+										_react2.default.createElement(_bookItem2.default, {
+												_id: booksArr._id,
+												title: booksArr.title,
+												description: booksArr.description,
+												price: booksArr.price })
+								);
+						});
+						return _react2.default.createElement(
+								_reactBootstrap.Grid,
+								null,
+								_react2.default.createElement(
+										_reactBootstrap.Row,
+										null,
+										_react2.default.createElement(
+												_reactBootstrap.Carousel,
+												null,
+												_react2.default.createElement(
+														_reactBootstrap.Carousel.Item,
+														null,
+														_react2.default.createElement('img', { width: 900, height: 300, alt: '900x300', src: 'https://cdn-images-1.medium.com/max/1000/1*YLlZ96J3p8GFkIh1USVMzg.jpeg' }),
+														_react2.default.createElement(
+																_reactBootstrap.Carousel.Caption,
+																null,
+																_react2.default.createElement(
+																		'h3',
+																		null,
+																		'First slide label'
+																),
+																_react2.default.createElement(
+																		'p',
+																		null,
+																		'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+																)
+														)
+												),
+												_react2.default.createElement(
+														_reactBootstrap.Carousel.Item,
+														null,
+														_react2.default.createElement('img', { width: 900, height: 300, alt: '900x300', src: 'https://d3i6fh83elv35t.cloudfront.net/static/2018/08/Books_HD_8314929977-1024x682.jpg' }),
+														_react2.default.createElement(
+																_reactBootstrap.Carousel.Caption,
+																null,
+																_react2.default.createElement(
+																		'h3',
+																		null,
+																		'Second slide label'
+																),
+																_react2.default.createElement(
+																		'p',
+																		null,
+																		'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+																)
+														)
+												),
+												_react2.default.createElement(
+														_reactBootstrap.Carousel.Item,
+														null,
+														_react2.default.createElement('img', { width: 900, height: 300, alt: '900x300', src: 'https://www.helperhelper.com/wp-content/uploads/2015/10/bigstock-Stack-Of-Books-70033240.jpg' }),
+														_react2.default.createElement(
+																_reactBootstrap.Carousel.Caption,
+																null,
+																_react2.default.createElement(
+																		'h3',
+																		null,
+																		'Second slide label'
+																),
+																_react2.default.createElement(
+																		'p',
+																		null,
+																		'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+																)
+														)
+												),
+												_react2.default.createElement(
+														_reactBootstrap.Carousel.Item,
+														null,
+														_react2.default.createElement('img', { width: 900, height: 300, alt: '900x300', src: 'https://media.treehugger.com/assets/images/2018/07/books-stack.jpg.860x0_q70_crop-scale.jpg' }),
+														_react2.default.createElement(
+																_reactBootstrap.Carousel.Caption,
+																null,
+																_react2.default.createElement(
+																		'h3',
+																		null,
+																		'Third slide label'
+																),
+																_react2.default.createElement(
+																		'p',
+																		null,
+																		'Praesent commodo cursus magna, vel scelerisque nisl consectetur.'
+																)
+														)
+												)
+										)
+								),
+								_react2.default.createElement(
+										_reactBootstrap.Row,
+										{ style: { marginTop: '15px' } },
+										_react2.default.createElement(_cart2.default, null)
+								),
+								_react2.default.createElement(
+										_reactBootstrap.Row,
+										null,
+										_react2.default.createElement(
+												_reactBootstrap.Col,
+												{ xs: 12, sm: 6 },
+												_react2.default.createElement(_booksForm2.default, null)
+										),
+										_react2.default.createElement(
+												_reactBootstrap.Col,
+												{ xs: 12, sm: 6 },
+												booksList
+										)
+								)
+						);
+				}
+		}]);
+
+		return BooksList;
 }(_react2.default.Component);
 
 function mapStateToProps(state) {
-	return {
-		books: state.books.books
-	};
+		return {
+				books: state.books.books
+		};
 }
 function mapDispatchToProps(dispatch) {
-	return (0, _redux.bindActionCreators)({ getBooks: _booksActions.getBooks }, dispatch);
+		return (0, _redux.bindActionCreators)({ getBooks: _booksActions.getBooks }, dispatch);
 }
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(BooksList);
 
@@ -49615,7 +49699,7 @@ var Menu = function (_React$Component) {
             _react2.default.createElement(
               'a',
               { href: '/' },
-              'React-Bootstrap'
+              'Book Shop'
             )
           ),
           _react2.default.createElement(_reactBootstrap.Navbar.Toggle, null)
@@ -49711,7 +49795,7 @@ var Footer = function (_React$Component) {
 					{ className: "container" },
 					_react2.default.createElement(
 						"p",
-						{ className: "footer-text" },
+						{ className: "footer-text bg-#DFE4DE" },
 						"Copyright 2020 BookShop. All rights reserved"
 					)
 				)

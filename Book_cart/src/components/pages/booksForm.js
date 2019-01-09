@@ -34,8 +34,9 @@ const booksList=this.props.books.map(function(booksArr){
 })
 
     return(  
-       <Well bsSize="large">
-        <Panel>
+    
+       <Well bsSize="large" >
+        <Panel  >
        <Panel.Body>
           <FormGroup controlId="title">
             
